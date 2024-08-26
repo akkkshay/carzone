@@ -87,6 +87,8 @@ DATABASES = {
         'NAME': 'carzone_db',
         'USER' : 'postgres',
         'PASSWORD' : 'root',
+        'HOST' : 'localhost',
+        'PORT' : 5432,
     }
 }
 
