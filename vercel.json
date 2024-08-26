@@ -2,9 +2,9 @@
     "builds": [{
         "src": "carzone/wsgi.py",
         "use": "@vercel/python",
-        "config": { 
-            "maxLambdaSize": "15mb", 
-            "runtime": "python3.9" 
+        "config": {
+            "maxLambdaSize": "15mb",
+            "runtime": "python3.9"
         }
     }],
     "routes": [
@@ -13,5 +13,8 @@
             "dest": "carzone/wsgi.py"
         }
     ],
-    "installCommand": "pip uninstall psycopg2 -y || true && pip install psycopg2-binary && pip install --disable-pip-version-check --target . --upgrade -r requirements.txt"
+    "installCommand": "pip install --disable-pip-version-check --target . --upgrade -r requirements.txt || true",
+    "hooks": {
+        "postinstall": "pip uninstall psycopg2 -y && pip install psycopg2-binary"
+    }
 }
