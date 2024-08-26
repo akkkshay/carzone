@@ -12,9 +12,5 @@
             "src": "/(.*)",
             "dest": "carzone/wsgi.py"
         }
-    ],
-    "installCommand": "pip install --disable-pip-version-check --target . --upgrade -r requirements.txt || true",
-    "hooks": {
-        "postinstall": "pip uninstall psycopg2 -y && pip install psycopg2-binary"
-    }
+    ]
 }
