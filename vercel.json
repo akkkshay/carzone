@@ -13,5 +13,5 @@
             "dest": "carzone/wsgi.py"
         }
     ],
-    "installCommand": "pip install psycopg2-binary && pip install --disable-pip-version-check --target . --upgrade -r requirements.txt"
+    "installCommand": "pip uninstall psycopg2 -y || true && pip install psycopg2-binary && pip install --disable-pip-version-check --target . --upgrade -r requirements.txt"
 }
